@@ -9,6 +9,7 @@ agent {label 'lab1'}
     stage ('run parallel b and t') {
       parallel { 
     stage ('B') {
+      agent {label 'built-in'}
       steps {
         echo "this is b"
       }
