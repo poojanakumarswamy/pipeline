@@ -1,6 +1,8 @@
 pipeline{
 agent any
   stages {
+    stage ('run parallel b and t') {
+      parallel { 
     stage ('B') {
       steps {
         echo "this is b"
@@ -9,6 +11,8 @@ agent any
     stage ('T') {
       steps {
         echo "this is t"
+      }
+    }
       }
     }
     stage ('D') {
