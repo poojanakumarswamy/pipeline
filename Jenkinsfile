@@ -1,9 +1,11 @@
 pipeline{
-agent {label 'lab1'}
+agent none
   stages {
      stage ('A') {
+       agent {label 'slave1'}
       steps {
         echo "this is a"
+        
       }
     }
     stage ('run parallel b and t') {
@@ -15,6 +17,7 @@ agent {label 'lab1'}
       }
     }
     stage ('T') {
+      agent {label 'slave2'}
       steps {
         echo "this is t"
       }
@@ -24,12 +27,14 @@ agent {label 'lab1'}
         stage ('run parallel d and e') {
       parallel {
     stage ('D') {
+      agent {label 'lib1'}
       steps {
         echo "this is d"
         
       }
     }
         stage ('E') {
+          agent {label 'slave2'}
       steps {
         echo "this is e"
         
