@@ -12,11 +12,20 @@ agent any
       steps {
         echo "this is t"
       }
-    
     }
+      }
+    }
+        stage ('run parallel d and e') {
+      parallel {
     stage ('D') {
       steps {
         echo "this is d"
+        
+      }
+    }
+        stage ('E') {
+      steps {
+        echo "this is e"
         
       }
     }
