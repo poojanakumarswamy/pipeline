@@ -12,8 +12,7 @@ agent any
       steps {
         echo "this is t"
       }
-    }
-      }
+    
     }
     stage ('D') {
       steps {
@@ -21,7 +20,8 @@ agent any
         
       }
     }
-    
+      }
+    }
   }
   
 }
